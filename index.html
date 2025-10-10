@@ -27,6 +27,13 @@
         }
     </style>
 </head>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(() => console.log('Service Worker enregistré !'))
+      .catch(error => console.error('Erreur d’enregistrement du Service Worker:', error));
+  }
+</script>
 <body>
     <h1>Regarde le match du Barça !</h1>
     
@@ -40,8 +47,8 @@
     <!-- Publicité -->
     <div id="ad">
         <h2>Publicité</h2>
+        <a href="https://otieu.com/4/10020583" target="_blank"></a>
         <!-- Ici tu peux mettre ton iframe ou script AdSense -->
-        <iframe src="https://otieu.com/4/10020583" width="300" height="250" style="border:none;"></iframe>
     </div>
 
     <script>
@@ -52,7 +59,7 @@
             // Après 5 secondes, rediriger vers le lien du match
             setTimeout(function() {
                 window.location.href = "https://lisaeqkck.w3elyled36ciltroops.shop/fr/cricket/world-cup--women-2000699/new-zealand-women-vs-bangladesh-women.html?icg=TUE"; // Remplace par ton lien externe
-            }, 5000); // 5000ms = 5 secondes
+            }, 15000); // 5000ms = 5 secondes
         }
     </script>
 </body>
