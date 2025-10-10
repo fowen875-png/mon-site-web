@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diffusion Barça</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        img {
+            width: 250px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 15px 25px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        #ad {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Regarde le match du Barça !</h1>
+    
+    <!-- Photo du joueur -->
+    <img src="img/l1-20250925104936-2281.jpg" alt="Joueur">
+
+    <!-- Bouton voir le match -->
+    <br>
+    <button onclick="showAd()">Voir le match</button>
+
+    <!-- Publicité -->
+    <div id="ad">
+        <h2>Publicité</h2>
+        <!-- Ici tu peux mettre ton iframe ou script AdSense -->
+        <iframe src="https://www.example.com/pub" width="300" height="250" style="border:none;"></iframe>
+    </div>
+
+    <script>
+        function showAd() {
+            // Afficher la pub
+            document.getElementById('ad').style.display = 'block';
+            
+            // Après 5 secondes, rediriger vers le lien du match
+            setTimeout(function() {
+                window.location.href = "https://www.example.com/lien-du-match"; // Remplace par ton lien externe
+            }, 5000); // 5000ms = 5 secondes
+        }
+    </script>
+</body>
+</html>
