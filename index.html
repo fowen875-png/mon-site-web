@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -25,6 +25,10 @@
             display: none;
             margin-top: 20px;
         }
+        #countdown {
+            font-size: 18px;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -35,42 +39,54 @@
       .catch(error => console.error('Erreur d’enregistrement du Service Worker:', error));
   }
 </script>
-<script>(function(s){s.dataset.zone='10021403',s.src='https://groleegni.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 <body>
     <h1>Regarde le match du Barça !</h1>
     
-    <!-- Photo du joueur -->
     <img src="img/l1-20250925104936-2281.jpg" alt="Joueur">
 
-    <!-- Bouton voir le match -->
     <br>
     <button onclick="showAd()">Voir le match</button>
-    <script src="https://fpyf8.com/88/tag.min.js" data-zone="177177" async data-cfasync="false"></script>
-        <script>(function(s){s.dataset.zone='10021403',s.src='https://groleegni.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
-    <!-- Publicité -->
+    <!-- Publicité Monetag -->
     <div id="ad">
         <a href="https://otieu.com/4/10020583" target="_blank"></a>
-        <p id="countdown"> redirection dans 10 secondes...</p>
-        <!-- Ici tu peux mettre ton iframe ou script AdSense -->
+        <p id="countdown"></p>
     </div>
-     <script>
+
+    <script>
+        let firstClick = true;
+
         function showAd() {
-            // Afficher la pub
-            document.getElementById('ad').style.display = 'block';
+            const adDiv = document.getElementById('ad');
+            const countdown = document.getElementById('countdown');
             
-            // Après 5 secondes, rediriger vers le lien du match
-               let temps = 10;
-const interval = setInterval(() => {
-    temps--;
-    countdown.textContent = "Redirection dans" + temps + " secondes... ";
-    if (temps <= 0) {
-        clearInterval(interval);
-        window.location.href = "https://lisaend8u.w3elyled36ciltroops.shop/fr/football/fifa-world-cup-qualification-uefa-4155521/spain-vs-georgia.html?icg=TUE"; // Remplace par ton lien externe
-    }
-}, 1000); // 1000ms = 10 secondes
+            if(firstClick){
+                // Afficher la pub Monetag au premier clic
+                adDiv.style.display = 'block';
+                
+                let script = document.createElement('script');
+                script.src = "https://fpyf8.com/88/tag.min.js";
+                script.async = true;
+                script.dataset.zone = "177177";
+                script.dataset.cfasync = "false";
+                document.body.appendChild(script);
+
+                firstClick = false;
+            } else {
+                // Deuxième clic : lancement du compteur
+                countdown.style.display = 'block';
+                let temps = 10;
+
+                const interval = setInterval(() => {
+                    countdown.textContent = "Redirection dans " + temps + " secondes...";
+                    temps--;
+                    if (temps < 0) {
+                        clearInterval(interval);
+                        window.location.href = "https://lisaend8u.w3elyled36ciltroops.shop/fr/football/fifa-world-cup-qualification-uefa-4155521/spain-vs-georgia.html?icg=TUE";
+                    }
+                }, 1000);// 1000=10secondes
+            }
         }
     </script>
 </body>
 </html>
-
