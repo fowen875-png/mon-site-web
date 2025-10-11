@@ -28,11 +28,32 @@
         }
         #countdown {
             font-size: 18px;
-            font-weight: bold;
+    font-weight: bold;
+    display: none; /* invisible au départ */
         }
+        
     </style>
 </head>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "FC Barcelone vs Gérone",
+  "startDate": "2025-10-18T15:15",
+  "endDate": "2025-10-18T17:15",
+  "location": {
+    "@type": "Place",
+    "name": "Olympic Lluís Companys",
+    "address": "Barcelone, Espagne"
+  },
+  "eventSchedule": {
+    "@type": "Schedule",
+    "startDate": "2025-10-18T15:15",
+    "endDate": "2025-10-18T17:15"
+  },
+  "description": "Match de la semaine 9 de la Liga 2025-2026 entre le FC Barcelone et Gérone"
+}
+</script>
 <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
