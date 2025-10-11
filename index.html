@@ -53,6 +53,7 @@
     <div id="ad">
         <h2>Publicité</h2>
         <a href="https://otieu.com/4/10020583" target="_blank"></a>
+        <p id="countdown"> redirection dans 10 secondes...</p>
         <!-- Ici tu peux mettre ton iframe ou script AdSense -->
     </div>
      <script>
@@ -61,12 +62,17 @@
             document.getElementById('ad').style.display = 'block';
             
             // Après 5 secondes, rediriger vers le lien du match
-            setTimeout(function() {
-                window.location.href = "https://lisaend8u.w3elyled36ciltroops.shop/fr/football/fifa-world-cup-qualification-uefa-4155521/spain-vs-georgia.html?icg=TUE"; // Remplace par ton lien externe
-            }, 15000); // 5000ms = 5 secondes
+               let temps = 10;
+const interval = setInterval(() => {
+    temps--;
+    countdown.textContent = "Redirection dans" + temps + " secondes... ";
+    if (temps <= 0) {
+        clearInterval(interval);
+        window.location.href = "https://lisaend8u.w3elyled36ciltroops.shop/fr/football/fifa-world-cup-qualification-uefa-4155521/spain-vs-georgia.html?icg=TUE"; // Remplace par ton lien externe
+    }
+}, 1000); // 1000ms = 10 secondes
         }
     </script>
 </body>
 </html>
-
 
